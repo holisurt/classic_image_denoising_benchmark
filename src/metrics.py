@@ -1,13 +1,6 @@
 import numpy as np
 
 def psnr(original, denoised):
-    """
-    Tính PSNR (Peak Signal-to-Noise Ratio) giữa 2 ảnh.
-    
-    Công thức: PSNR = 10 * log10(MAX^2 / MSE)
-    Đơn vị: dB. Càng cao càng tốt.
-    Ngưỡng tham khảo: >30dB là tốt, >40dB là rất tốt
-    """
     original = original.astype(np.float64)
     denoised = denoised.astype(np.float64)
     
@@ -21,15 +14,6 @@ def psnr(original, denoised):
 
 
 def ssim(original, denoised, window_size=11, sigma=1.5):
-    """
-    Tính SSIM (Structural Similarity Index).
-    
-    SSIM đo 3 thứ: luminance, contrast, structure
-    Giá trị từ -1 đến 1. Càng gần 1 càng tốt.
-    
-    Dùng implementation của scikit-image cho chính xác,
-    nhưng hiểu công thức để trả lời phỏng vấn.
-    """
     from skimage.metrics import structural_similarity
     
     # Nếu ảnh grayscale

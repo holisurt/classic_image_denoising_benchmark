@@ -1,16 +1,6 @@
 import numpy as np
 
 def add_gaussian_noise(image, sigma=25):
-    """
-    Thêm Gaussian noise vào ảnh.
-    
-    Tham số:
-        image: numpy array, giá trị pixel trong [0, 255]
-        sigma: độ lệch chuẩn của noise (25, 50, 75 là các mức hay dùng)
-    
-    Trả về:
-        ảnh nhiễu, clip về [0, 255]
-    """
     image_float = image.astype(np.float64) 
     """Đổi sang float để tránh tràn số khi cộng noise vì ảnh được lưu duới dạng uint8 (0-255). Nếu cộng trực tiếp sẽ bị tràn số và kết quả không đúng."""
     
@@ -25,12 +15,6 @@ def add_gaussian_noise(image, sigma=25):
 
 
 def add_salt_pepper_noise(image, prob=0.05):
-    """
-    Thêm Salt & Pepper noise.
-    
-    Tham số:
-        prob: xác suất mỗi pixel bị nhiễu (0.05 = 5%)
-    """
     noisy = image.copy()
     
     # Salt: set pixel thành 255
