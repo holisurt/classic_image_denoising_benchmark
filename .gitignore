@@ -2,3 +2,6 @@ venv_denoising/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+data/Set12/
+data/BSD68/
+results/old_result/
