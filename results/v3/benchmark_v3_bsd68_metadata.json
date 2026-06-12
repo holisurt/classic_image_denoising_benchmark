@@ -1,0 +1,29 @@
+{
+  "dataset_name": "bsd68",
+  "data_dir": "Data\\BSD68",
+  "num_images": 68,
+  "sigmas": [
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    50,
+    75
+  ],
+  "methods": [
+    "Gaussian_SciPy",
+    "Median_SciPy",
+    "NLM_Skimage_Fast",
+    "NLM_IPOL_Like",
+    "BM3D_TAU"
+  ],
+  "seed": 42,
+  "trials": 1,
+  "warmup": 0,
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0"
+}

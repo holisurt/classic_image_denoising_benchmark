@@ -1,0 +1,4 @@
+dataset,method_ours,sigma,psnr_mean,psnr_std,ssim_mean,ssim_std,runtime_mean_ms,runtime_median_ms,n_images,literature_method,method_ref,psnr_ref,ssim_ref,source,notes,psnr_gap_ours_minus_ref,ssim_gap_ours_minus_ref
+set12,BM3D_TAU,15,32.41,1.1495,0.898888,0.022651,1370.873,825.818,12,BM3D,BM3D,32.372,,DnCNN Table III,Average over 12 widely used grayscale test images,0.038,
+set12,BM3D_TAU,25,29.9619,1.3615,0.852322,0.030819,1337.008,892.18,12,BM3D,BM3D,29.969,,DnCNN Table III,Average over 12 widely used grayscale test images,-0.0071,
+set12,BM3D_TAU,50,26.3812,1.5188,0.758557,0.045649,1369.52,791.924,12,BM3D,BM3D,26.722,,DnCNN Table III,Average over 12 widely used grayscale test images,-0.3408,

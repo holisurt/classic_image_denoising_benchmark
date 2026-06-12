@@ -1,0 +1,721 @@
+dataset,image,height,width,sigma,seed,method,implementation,psnr,ssim,runtime_ms,status,error,notes
+set12,01,256,256,5,2281340331,Noisy,"clean + AWGN, clipped to [0,1]",34.174205,0.84446329,0.0,ok,,same noisy image reused for all methods
+set12,01,256,256,5,2281340331,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.823398,0.77993789,1.753,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,01,256,256,5,2281340331,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",27.149139,0.84804003,6.784,ok,,Optimized replacement for Python-loop median filter.
+set12,01,256,256,5,2281340331,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",37.610993,0.95519367,129.885,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,01,256,256,5,2281340331,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,,,1032.364,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,01,256,256,5,2281340331,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",38.297731,0.961694,1021.595,ok,,Reference classical upper baseline for AWGN.
+set12,01,256,256,10,2583503001,Noisy,"clean + AWGN, clipped to [0,1]",28.278253,0.64153355,0.0,ok,,same noisy image reused for all methods
+set12,01,256,256,10,2583503001,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.765932,0.76627999,1.39,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,01,256,256,10,2583503001,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",26.638827,0.7744816,6.197,ok,,Optimized replacement for Python-loop median filter.
+set12,01,256,256,10,2583503001,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",33.099021,0.9081385,144.346,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,01,256,256,10,2583503001,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,31.303435,0.79454914,1078.612,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,01,256,256,10,2583503001,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",34.208472,0.93207596,744.128,ok,,Reference classical upper baseline for AWGN.
+set12,01,256,256,15,1618184349,Noisy,"clean + AWGN, clipped to [0,1]",24.850308,0.50829672,0.0,ok,,same noisy image reused for all methods
+set12,01,256,256,15,1618184349,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.669968,0.74446872,1.197,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,01,256,256,15,1618184349,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.91921,0.68621276,6.436,ok,,Optimized replacement for Python-loop median filter.
+set12,01,256,256,15,1618184349,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",30.818347,0.86402567,147.724,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,01,256,256,15,1618184349,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,28.367211,0.68131383,1109.24,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,01,256,256,15,1618184349,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",31.946745,0.89916075,743.317,ok,,Reference classical upper baseline for AWGN.
+set12,01,256,256,20,921031372,Noisy,"clean + AWGN, clipped to [0,1]",22.444075,0.42422636,0.0,ok,,same noisy image reused for all methods
+set12,01,256,256,20,921031372,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.535737,0.71891423,1.207,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,01,256,256,20,921031372,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.238508,0.60953094,6.243,ok,,Optimized replacement for Python-loop median filter.
+set12,01,256,256,20,921031372,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",29.285472,0.83007354,147.787,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,01,256,256,20,921031372,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,28.007904,0.73005608,1712.509,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,01,256,256,20,921031372,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",30.342085,0.86711532,757.078,ok,,Reference classical upper baseline for AWGN.
+set12,01,256,256,25,2029866817,Noisy,"clean + AWGN, clipped to [0,1]",20.596203,0.36350522,0.0,ok,,same noisy image reused for all methods
+set12,01,256,256,25,2029866817,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.362311,0.68879293,1.659,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,01,256,256,25,2029866817,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.381064,0.54020178,6.613,ok,,Optimized replacement for Python-loop median filter.
+set12,01,256,256,25,2029866817,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",28.009285,0.80321514,150.714,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,01,256,256,25,2029866817,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.815179,0.67656756,1748.648,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,01,256,256,25,2029866817,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.292524,0.84707728,744.862,ok,,Reference classical upper baseline for AWGN.
+set12,01,256,256,30,3996538051,Noisy,"clean + AWGN, clipped to [0,1]",19.056966,0.31500496,0.0,ok,,same noisy image reused for all methods
+set12,01,256,256,30,3996538051,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.134563,0.65365434,0.978,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,01,256,256,30,3996538051,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.539991,0.48443969,6.38,ok,,Optimized replacement for Python-loop median filter.
+set12,01,256,256,30,3996538051,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",26.738974,0.76972309,152.507,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,01,256,256,30,3996538051,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.664747,0.61533214,1801.477,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,01,256,256,30,3996538051,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.289409,0.82068098,747.967,ok,,Reference classical upper baseline for AWGN.
+set12,01,256,256,35,693123770,Noisy,"clean + AWGN, clipped to [0,1]",17.761021,0.28158534,0.0,ok,,same noisy image reused for all methods
+set12,01,256,256,35,693123770,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.905433,0.62348905,1.139,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,01,256,256,35,693123770,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",22.79692,0.43978008,7.177,ok,,Optimized replacement for Python-loop median filter.
+set12,01,256,256,35,693123770,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.574717,0.73913068,155.051,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,01,256,256,35,693123770,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.604193,0.63896957,7175.149,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,01,256,256,35,693123770,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",27.445361,0.79743366,758.246,ok,,Reference classical upper baseline for AWGN.
+set12,01,256,256,40,2439562709,Noisy,"clean + AWGN, clipped to [0,1]",16.6626,0.25132351,0.0,ok,,same noisy image reused for all methods
+set12,01,256,256,40,2439562709,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.622621,0.59322519,0.886,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,01,256,256,40,2439562709,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",22.061857,0.40022396,7.039,ok,,Optimized replacement for Python-loop median filter.
+set12,01,256,256,40,2439562709,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",24.550231,0.71578148,162.3,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,01,256,256,40,2439562709,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.869219,0.61516769,7500.896,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,01,256,256,40,2439562709,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.726663,0.78291549,1253.559,ok,,Reference classical upper baseline for AWGN.
+set12,01,256,256,50,1832155792,Noisy,"clean + AWGN, clipped to [0,1]",14.87799,0.20789155,0.0,ok,,same noisy image reused for all methods
+set12,01,256,256,50,1832155792,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.047185,0.53123708,1.417,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,01,256,256,50,1832155792,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",20.688167,0.33795997,7.585,ok,,Optimized replacement for Python-loop median filter.
+set12,01,256,256,50,1832155792,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",22.883689,0.66499678,156.709,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,01,256,256,50,1832155792,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.166478,0.63376468,11484.815,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,01,256,256,50,1832155792,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",25.322377,0.74574619,793.03,ok,,Reference classical upper baseline for AWGN.
+set12,01,256,256,75,2158462055,Noisy,"clean + AWGN, clipped to [0,1]",11.952151,0.14286088,0.0,ok,,same noisy image reused for all methods
+set12,01,256,256,75,2158462055,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",20.504296,0.42627621,1.507,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,01,256,256,75,2158462055,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",17.948055,0.24662974,7.423,ok,,Optimized replacement for Python-loop median filter.
+set12,01,256,256,75,2158462055,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",19.63199,0.55793345,156.465,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,01,256,256,75,2158462055,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,20.974623,0.60788075,12563.579,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,01,256,256,75,2158462055,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",22.448879,0.67725854,752.287,ok,,Reference classical upper baseline for AWGN.
+set12,02,256,256,5,3455636256,Noisy,"clean + AWGN, clipped to [0,1]",34.146599,0.83614618,0.0,ok,,same noisy image reused for all methods
+set12,02,256,256,5,3455636256,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",29.157707,0.83719449,1.337,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,02,256,256,5,3455636256,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",33.724898,0.863049,7.229,ok,,Optimized replacement for Python-loop median filter.
+set12,02,256,256,5,3455636256,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",38.193753,0.93503023,144.357,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,02,256,256,5,3455636256,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,36.555497,0.90662509,1067.858,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,02,256,256,5,3455636256,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",39.836414,0.95780481,792.716,ok,,Reference classical upper baseline for AWGN.
+set12,02,256,256,10,2294801160,Noisy,"clean + AWGN, clipped to [0,1]",28.120547,0.60570819,0.0,ok,,same noisy image reused for all methods
+set12,02,256,256,10,2294801160,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",29.020675,0.82204182,0.969,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,02,256,256,10,2294801160,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",31.797828,0.78654319,6.831,ok,,Optimized replacement for Python-loop median filter.
+set12,02,256,256,10,2294801160,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",35.139653,0.88742027,146.025,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,02,256,256,10,2294801160,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,31.610088,0.76150119,1106.567,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,02,256,256,10,2294801160,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",36.709458,0.91994407,813.878,ok,,Reference classical upper baseline for AWGN.
+set12,02,256,256,15,2387362580,Noisy,"clean + AWGN, clipped to [0,1]",24.595625,0.4536291,0.0,ok,,same noisy image reused for all methods
+set12,02,256,256,15,2387362580,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",28.781009,0.80011929,1.063,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,02,256,256,15,2387362580,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",29.90516,0.69802527,6.502,ok,,Optimized replacement for Python-loop median filter.
+set12,02,256,256,15,2387362580,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",33.349896,0.86176435,149.847,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,02,256,256,15,2387362580,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,28.54195,0.62843404,1128.323,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,02,256,256,15,2387362580,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",34.873059,0.88587267,795.844,ok,,Reference classical upper baseline for AWGN.
+set12,02,256,256,20,40032525,Noisy,"clean + AWGN, clipped to [0,1]",22.099167,0.35825188,0.0,ok,,same noisy image reused for all methods
+set12,02,256,256,20,40032525,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",28.425128,0.77037944,1.594,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,02,256,256,20,40032525,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",28.137572,0.60850345,6.688,ok,,Optimized replacement for Python-loop median filter.
+set12,02,256,256,20,40032525,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",31.876672,0.8410739,149.882,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,02,256,256,20,40032525,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,29.020972,0.67099633,1772.263,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,02,256,256,20,40032525,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",33.864603,0.8715122,760.56,ok,,Reference classical upper baseline for AWGN.
+set12,02,256,256,25,1582357146,Noisy,"clean + AWGN, clipped to [0,1]",20.234107,0.29555641,0.0,ok,,same noisy image reused for all methods
+set12,02,256,256,25,1582357146,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",28.04143,0.73897804,1.296,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,02,256,256,25,1582357146,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",26.665003,0.5377966,6.669,ok,,Optimized replacement for Python-loop median filter.
+set12,02,256,256,25,1582357146,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",30.524387,0.81729756,170.435,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,02,256,256,25,1582357146,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.741963,0.6034026,1817.746,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,02,256,256,25,1582357146,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",32.926356,0.85509885,851.747,ok,,Reference classical upper baseline for AWGN.
+set12,02,256,256,30,3776854663,Noisy,"clean + AWGN, clipped to [0,1]",18.699045,0.25024665,0.0,ok,,same noisy image reused for all methods
+set12,02,256,256,30,3776854663,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",27.623554,0.7060038,1.518,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,02,256,256,30,3776854663,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.388112,0.47670683,6.959,ok,,Optimized replacement for Python-loop median filter.
+set12,02,256,256,30,3776854663,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",29.326278,0.79707826,155.265,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,02,256,256,30,3776854663,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.532177,0.54582635,1814.474,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,02,256,256,30,3776854663,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",32.117319,0.8451545,754.762,ok,,Reference classical upper baseline for AWGN.
+set12,02,256,256,35,3608717929,Noisy,"clean + AWGN, clipped to [0,1]",17.442873,0.21529478,0.0,ok,,same noisy image reused for all methods
+set12,02,256,256,35,3608717929,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",27.158655,0.67816473,1.098,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,02,256,256,35,3608717929,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.244044,0.42498217,6.682,ok,,Optimized replacement for Python-loop median filter.
+set12,02,256,256,35,3608717929,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",28.203749,0.7749735,155.863,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,02,256,256,35,3608717929,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.316619,0.62134942,7367.86,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,02,256,256,35,3608717929,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",31.458854,0.83619935,758.507,ok,,Reference classical upper baseline for AWGN.
+set12,02,256,256,40,244965249,Noisy,"clean + AWGN, clipped to [0,1]",16.344591,0.18732067,0.0,ok,,same noisy image reused for all methods
+set12,02,256,256,40,244965249,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.596194,0.64413858,1.198,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,02,256,256,40,244965249,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.168447,0.38201053,6.708,ok,,Optimized replacement for Python-loop median filter.
+set12,02,256,256,40,244965249,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",27.134398,0.75376118,152.551,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,02,256,256,40,244965249,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.555338,0.59203878,7480.115,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,02,256,256,40,244965249,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",30.644168,0.82602641,781.793,ok,,Reference classical upper baseline for AWGN.
+set12,02,256,256,50,3512129060,Noisy,"clean + AWGN, clipped to [0,1]",14.624858,0.15054839,0.0,ok,,same noisy image reused for all methods
+set12,02,256,256,50,3512129060,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.873899,0.58745809,1.73,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,02,256,256,50,3512129060,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",21.541046,0.32136056,6.495,ok,,Optimized replacement for Python-loop median filter.
+set12,02,256,256,50,3512129060,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.629551,0.71396636,152.173,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,02,256,256,50,3512129060,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.82423,0.66361112,11721.402,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,02,256,256,50,3512129060,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.663554,0.80917972,773.413,ok,,Reference classical upper baseline for AWGN.
+set12,02,256,256,75,1881639261,Noisy,"clean + AWGN, clipped to [0,1]",11.763577,0.09386269,0.0,ok,,same noisy image reused for all methods
+set12,02,256,256,75,1881639261,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.697841,0.47822922,1.64,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,02,256,256,75,1881639261,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",18.272046,0.22234806,6.588,ok,,Optimized replacement for Python-loop median filter.
+set12,02,256,256,75,1881639261,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",22.364537,0.62558439,152.16,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,02,256,256,75,1881639261,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,23.357109,0.65766258,12681.295,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,02,256,256,75,1881639261,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.750741,0.7593261,743.552,ok,,Reference classical upper baseline for AWGN.
+set12,03,256,256,5,1387133277,Noisy,"clean + AWGN, clipped to [0,1]",34.179866,0.88817786,0.0,ok,,same noisy image reused for all methods
+set12,03,256,256,5,1387133277,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.273869,0.85131801,1.201,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,03,256,256,5,1387133277,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",32.085934,0.91677413,6.877,ok,,Optimized replacement for Python-loop median filter.
+set12,03,256,256,5,1387133277,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",37.122548,0.95200503,131.229,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,03,256,256,5,1387133277,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,,,989.935,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,03,256,256,5,1387133277,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",38.019445,0.95955699,767.202,ok,,Reference classical upper baseline for AWGN.
+set12,03,256,256,10,761323935,Noisy,"clean + AWGN, clipped to [0,1]",28.188634,0.7080176,0.0,ok,,same noisy image reused for all methods
+set12,03,256,256,10,761323935,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.19841,0.84153904,1.384,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,03,256,256,10,761323935,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",30.539023,0.85974986,6.427,ok,,Optimized replacement for Python-loop median filter.
+set12,03,256,256,10,761323935,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",33.489311,0.91508555,139.86,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,03,256,256,10,761323935,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,30.75773,0.81128092,1059.795,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,03,256,256,10,761323935,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",34.755812,0.93360828,728.162,ok,,Reference classical upper baseline for AWGN.
+set12,03,256,256,15,2313130988,Noisy,"clean + AWGN, clipped to [0,1]",24.638772,0.56644358,0.0,ok,,same noisy image reused for all methods
+set12,03,256,256,15,2313130988,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.064286,0.82542665,1.425,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,03,256,256,15,2313130988,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",28.792181,0.78712237,6.295,ok,,Optimized replacement for Python-loop median filter.
+set12,03,256,256,15,2313130988,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",31.144697,0.879879,147.545,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,03,256,256,15,2313130988,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.706521,0.69711632,1089.462,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,03,256,256,15,2313130988,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",32.718132,0.91162829,737.893,ok,,Reference classical upper baseline for AWGN.
+set12,03,256,256,20,4080567777,Noisy,"clean + AWGN, clipped to [0,1]",22.170093,0.46934176,0.0,ok,,same noisy image reused for all methods
+set12,03,256,256,20,4080567777,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.90208,0.80646927,1.445,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,03,256,256,20,4080567777,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",27.28865,0.71678969,6.458,ok,,Optimized replacement for Python-loop median filter.
+set12,03,256,256,20,4080567777,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",29.383418,0.84758136,152.644,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,03,256,256,20,4080567777,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.641927,0.72620462,1656.191,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,03,256,256,20,4080567777,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",31.287524,0.89207892,845.797,ok,,Reference classical upper baseline for AWGN.
+set12,03,256,256,25,2790575125,Noisy,"clean + AWGN, clipped to [0,1]",20.299349,0.39798782,0.0,ok,,same noisy image reused for all methods
+set12,03,256,256,25,2790575125,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.715605,0.78461053,1.367,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,03,256,256,25,2790575125,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.97503,0.65125519,6.899,ok,,Optimized replacement for Python-loop median filter.
+set12,03,256,256,25,2790575125,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",27.916243,0.81627148,154.044,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,03,256,256,25,2790575125,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.389347,0.66769663,1713.699,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,03,256,256,25,2790575125,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",30.22886,0.87373716,769.995,ok,,Reference classical upper baseline for AWGN.
+set12,03,256,256,30,1760339294,Noisy,"clean + AWGN, clipped to [0,1]",18.789301,0.34317952,0.0,ok,,same noisy image reused for all methods
+set12,03,256,256,30,1760339294,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.462465,0.75705779,1.515,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,03,256,256,30,1760339294,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.774636,0.59541096,6.491,ok,,Optimized replacement for Python-loop median filter.
+set12,03,256,256,30,1760339294,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",26.671972,0.78864469,164.376,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,03,256,256,30,1760339294,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.355212,0.61748767,1856.567,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,03,256,256,30,1760339294,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.216457,0.85552901,843.991,ok,,Reference classical upper baseline for AWGN.
+set12,03,256,256,35,1064807883,Noisy,"clean + AWGN, clipped to [0,1]",17.520712,0.3008831,0.0,ok,,same noisy image reused for all methods
+set12,03,256,256,35,1064807883,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.254357,0.73972147,1.5,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,03,256,256,35,1064807883,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.778159,0.54594494,7.395,ok,,Optimized replacement for Python-loop median filter.
+set12,03,256,256,35,1064807883,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.541477,0.7614695,162.551,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,03,256,256,35,1064807883,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.505591,0.65787282,6801.209,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,03,256,256,35,1064807883,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.467905,0.83835545,1091.125,ok,,Reference classical upper baseline for AWGN.
+set12,03,256,256,40,1707254497,Noisy,"clean + AWGN, clipped to [0,1]",16.424734,0.26441034,0.0,ok,,same noisy image reused for all methods
+set12,03,256,256,40,1707254497,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.926047,0.70814193,1.532,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,03,256,256,40,1707254497,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",22.766726,0.4971758,7.932,ok,,Optimized replacement for Python-loop median filter.
+set12,03,256,256,40,1707254497,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",24.442574,0.731077,157.05,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,03,256,256,40,1707254497,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.723127,0.61696491,7052.718,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,03,256,256,40,1707254497,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",27.538079,0.81693985,742.542,ok,,Reference classical upper baseline for AWGN.
+set12,03,256,256,50,3408054061,Noisy,"clean + AWGN, clipped to [0,1]",14.720144,0.21481114,0.0,ok,,same noisy image reused for all methods
+set12,03,256,256,50,3408054061,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.343797,0.66052412,0.931,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,03,256,256,50,3408054061,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",21.162984,0.42990346,6.476,ok,,Optimized replacement for Python-loop median filter.
+set12,03,256,256,50,3408054061,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",22.571415,0.68571995,156.499,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,03,256,256,50,3408054061,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.335587,0.65301337,11057.509,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,03,256,256,50,3408054061,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.423574,0.7917722,752.763,ok,,Reference classical upper baseline for AWGN.
+set12,03,256,256,75,60578875,Noisy,"clean + AWGN, clipped to [0,1]",11.845569,0.13680537,0.0,ok,,same noisy image reused for all methods
+set12,03,256,256,75,60578875,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",21.631656,0.54967531,1.223,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,03,256,256,75,60578875,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",18.069117,0.30818405,6.572,ok,,Optimized replacement for Python-loop median filter.
+set12,03,256,256,75,60578875,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",19.44044,0.55887983,152.588,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,03,256,256,75,60578875,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,20.493066,0.59014054,12685.892,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,03,256,256,75,60578875,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",23.412904,0.71703447,742.93,ok,,Reference classical upper baseline for AWGN.
+set12,04,256,256,5,892820696,Noisy,"clean + AWGN, clipped to [0,1]",34.179974,0.92754991,0.0,ok,,same noisy image reused for all methods
+set12,04,256,256,5,892820696,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.235888,0.80715378,1.445,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,04,256,256,5,892820696,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",30.175584,0.91512382,6.03,ok,,Optimized replacement for Python-loop median filter.
+set12,04,256,256,5,892820696,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",36.348567,0.96511813,121.656,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,04,256,256,5,892820696,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,35.409961,0.95128936,950.44,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,04,256,256,5,892820696,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",37.392717,0.97338012,818.56,ok,,Reference classical upper baseline for AWGN.
+set12,04,256,256,10,1725072410,Noisy,"clean + AWGN, clipped to [0,1]",28.18313,0.79730959,0.0,ok,,same noisy image reused for all methods
+set12,04,256,256,10,1725072410,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.167582,0.80136318,0.862,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,04,256,256,10,1725072410,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",29.079706,0.87701029,6.259,ok,,Optimized replacement for Python-loop median filter.
+set12,04,256,256,10,1725072410,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",32.292354,0.92018663,140.586,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,04,256,256,10,1725072410,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,30.257816,0.86549512,1044.61,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,04,256,256,10,1725072410,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",33.337952,0.93867178,711.06,ok,,Reference classical upper baseline for AWGN.
+set12,04,256,256,15,4287337430,Noisy,"clean + AWGN, clipped to [0,1]",24.689719,0.67900566,0.0,ok,,same noisy image reused for all methods
+set12,04,256,256,15,4287337430,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.050395,0.79030209,1.495,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,04,256,256,15,4287337430,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",27.783301,0.82529993,6.456,ok,,Optimized replacement for Python-loop median filter.
+set12,04,256,256,15,4287337430,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",30.033291,0.87875727,147.644,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,04,256,256,15,4287337430,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.2784,0.77612184,1092.058,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,04,256,256,15,4287337430,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",31.230063,0.90876891,855.792,ok,,Reference classical upper baseline for AWGN.
+set12,04,256,256,20,3373831081,Noisy,"clean + AWGN, clipped to [0,1]",22.291931,0.58580742,0.0,ok,,same noisy image reused for all methods
+set12,04,256,256,20,3373831081,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.92886,0.77896454,1.202,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,04,256,256,20,3373831081,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",26.622141,0.77319416,7.673,ok,,Optimized replacement for Python-loop median filter.
+set12,04,256,256,20,3373831081,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",28.328319,0.83980949,153.559,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,04,256,256,20,3373831081,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.810585,0.78999659,1607.778,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,04,256,256,20,3373831081,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.818011,0.88206519,739.877,ok,,Reference classical upper baseline for AWGN.
+set12,04,256,256,25,409115430,Noisy,"clean + AWGN, clipped to [0,1]",20.368743,0.50747456,0.0,ok,,same noisy image reused for all methods
+set12,04,256,256,25,409115430,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.69859,0.76394271,1.131,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,04,256,256,25,409115430,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.399059,0.71968544,6.9,ok,,Optimized replacement for Python-loop median filter.
+set12,04,256,256,25,409115430,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",26.635874,0.79521622,156.351,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,04,256,256,25,409115430,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.51835,0.7400826,1681.103,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,04,256,256,25,409115430,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.556662,0.85833172,752.361,ok,,Reference classical upper baseline for AWGN.
+set12,04,256,256,30,2355390042,Noisy,"clean + AWGN, clipped to [0,1]",18.940794,0.44763056,0.0,ok,,same noisy image reused for all methods
+set12,04,256,256,30,2355390042,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.475369,0.74776704,1.318,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,04,256,256,30,2355390042,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.44373,0.67348417,7.094,ok,,Optimized replacement for Python-loop median filter.
+set12,04,256,256,30,2355390042,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.358852,0.75324426,159.048,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,04,256,256,30,2355390042,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.703169,0.70245632,1743.28,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,04,256,256,30,2355390042,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",27.61428,0.83498618,740.348,ok,,Reference classical upper baseline for AWGN.
+set12,04,256,256,35,433179331,Noisy,"clean + AWGN, clipped to [0,1]",17.688365,0.39525315,0.0,ok,,same noisy image reused for all methods
+set12,04,256,256,35,433179331,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.180733,0.72877527,1.349,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,04,256,256,35,433179331,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.535141,0.6277899,6.574,ok,,Optimized replacement for Python-loop median filter.
+set12,04,256,256,35,433179331,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",24.225529,0.70940334,157.198,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,04,256,256,35,433179331,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.717088,0.72463758,6690.532,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,04,256,256,35,433179331,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.758909,0.81215587,735.308,ok,,Reference classical upper baseline for AWGN.
+set12,04,256,256,40,1078682979,Noisy,"clean + AWGN, clipped to [0,1]",16.637762,0.35535277,0.0,ok,,same noisy image reused for all methods
+set12,04,256,256,40,1078682979,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.945576,0.71271631,1.373,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,04,256,256,40,1078682979,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",22.700728,0.58614055,6.693,ok,,Optimized replacement for Python-loop median filter.
+set12,04,256,256,40,1078682979,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",23.419682,0.67652561,156.116,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,04,256,256,40,1078682979,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.110507,0.69297361,6978.747,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,04,256,256,40,1078682979,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.157344,0.7926512,733.499,ok,,Reference classical upper baseline for AWGN.
+set12,04,256,256,50,1375833548,Noisy,"clean + AWGN, clipped to [0,1]",14.900042,0.28595274,0.0,ok,,same noisy image reused for all methods
+set12,04,256,256,50,1375833548,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.272227,0.67759419,0.902,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,04,256,256,50,1375833548,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",21.170851,0.51845102,7.553,ok,,Optimized replacement for Python-loop median filter.
+set12,04,256,256,50,1375833548,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",21.850594,0.59906282,153.214,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,04,256,256,50,1375833548,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,23.190181,0.6578401,11059.681,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,04,256,256,50,1375833548,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",24.787116,0.75027535,747.201,ok,,Reference classical upper baseline for AWGN.
+set12,04,256,256,75,2168920432,Noisy,"clean + AWGN, clipped to [0,1]",12.018032,0.18224255,0.0,ok,,same noisy image reused for all methods
+set12,04,256,256,75,2168920432,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",21.318381,0.57774724,0.856,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,04,256,256,75,2168920432,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",18.193815,0.38422316,6.66,ok,,Optimized replacement for Python-loop median filter.
+set12,04,256,256,75,2168920432,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",18.974329,0.43726652,151.426,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,04,256,256,75,2168920432,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,19.71091,0.50104687,12641.344,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,04,256,256,75,2168920432,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",21.930698,0.63717747,781.5,ok,,Reference classical upper baseline for AWGN.
+set12,05,256,256,5,2757237959,Noisy,"clean + AWGN, clipped to [0,1]",34.150994,0.90531199,0.0,ok,,same noisy image reused for all methods
+set12,05,256,256,5,2757237959,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.112656,0.84066013,0.913,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,05,256,256,5,2757237959,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",31.085556,0.93805466,6.135,ok,,Optimized replacement for Python-loop median filter.
+set12,05,256,256,5,2757237959,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",37.38334,0.97181852,125.862,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,05,256,256,5,2757237959,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,35.826679,0.94114116,965.339,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,05,256,256,5,2757237959,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",38.124206,0.97644914,822.965,ok,,Reference classical upper baseline for AWGN.
+set12,05,256,256,10,865405030,Noisy,"clean + AWGN, clipped to [0,1]",28.116053,0.75581752,0.0,ok,,same noisy image reused for all methods
+set12,05,256,256,10,865405030,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.077997,0.83297648,1.482,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,05,256,256,10,865405030,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",29.699994,0.88903835,6.214,ok,,Optimized replacement for Python-loop median filter.
+set12,05,256,256,10,865405030,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",33.26006,0.94329345,138.375,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,05,256,256,10,865405030,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,30.622995,0.84430662,1037.844,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,05,256,256,10,865405030,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",34.18229,0.95833065,825.247,ok,,Reference classical upper baseline for AWGN.
+set12,05,256,256,15,3783442629,Noisy,"clean + AWGN, clipped to [0,1]",24.635582,0.64097226,0.0,ok,,same noisy image reused for all methods
+set12,05,256,256,15,3783442629,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.986925,0.82088642,1.411,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,05,256,256,15,3783442629,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",28.235994,0.83128808,6.197,ok,,Optimized replacement for Python-loop median filter.
+set12,05,256,256,15,3783442629,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",30.812549,0.91417505,145.585,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,05,256,256,15,3783442629,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.623887,0.75365648,1083.52,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,05,256,256,15,3783442629,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",32.020107,0.94182023,733.428,ok,,Reference classical upper baseline for AWGN.
+set12,05,256,256,20,1939631600,Noisy,"clean + AWGN, clipped to [0,1]",22.102977,0.5527965,0.0,ok,,same noisy image reused for all methods
+set12,05,256,256,20,1939631600,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.850594,0.80349536,1.34,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,05,256,256,20,1939631600,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",26.788723,0.76737211,6.35,ok,,Optimized replacement for Python-loop median filter.
+set12,05,256,256,20,1939631600,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",29.212971,0.88530463,149.331,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,05,256,256,20,1939631600,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.077202,0.76854341,1581.39,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,05,256,256,20,1939631600,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",30.53247,0.92395337,750.581,ok,,Reference classical upper baseline for AWGN.
+set12,05,256,256,25,2248570328,Noisy,"clean + AWGN, clipped to [0,1]",20.282056,0.48828736,0.0,ok,,same noisy image reused for all methods
+set12,05,256,256,25,2248570328,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.711225,0.78516734,1.425,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,05,256,256,25,2248570328,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.576083,0.71250699,6.572,ok,,Optimized replacement for Python-loop median filter.
+set12,05,256,256,25,2248570328,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",27.884896,0.85539031,152.485,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,05,256,256,25,2248570328,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.929622,0.72281589,1641.476,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,05,256,256,25,2248570328,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.425774,0.90467412,932.614,ok,,Reference classical upper baseline for AWGN.
+set12,05,256,256,30,400080493,Noisy,"clean + AWGN, clipped to [0,1]",18.718374,0.43486055,0.0,ok,,same noisy image reused for all methods
+set12,05,256,256,30,400080493,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.558532,0.76653399,1.333,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,05,256,256,30,400080493,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.443252,0.66212019,7.573,ok,,Optimized replacement for Python-loop median filter.
+set12,05,256,256,30,400080493,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",26.94602,0.83128443,154.611,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,05,256,256,30,400080493,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.873628,0.67382602,1700.405,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,05,256,256,30,400080493,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.528219,0.8898129,764.824,ok,,Reference classical upper baseline for AWGN.
+set12,05,256,256,35,1527127068,Noisy,"clean + AWGN, clipped to [0,1]",17.473715,0.39379039,0.0,ok,,same noisy image reused for all methods
+set12,05,256,256,35,1527127068,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.320511,0.74226148,0.911,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,05,256,256,35,1527127068,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.444598,0.61642658,7.185,ok,,Optimized replacement for Python-loop median filter.
+set12,05,256,256,35,1527127068,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.961251,0.80561157,160.421,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,05,256,256,35,1527127068,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.099273,0.70381907,6439.431,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,05,256,256,35,1527127068,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",27.836617,0.87306595,749.985,ok,,Reference classical upper baseline for AWGN.
+set12,05,256,256,40,3927817417,Noisy,"clean + AWGN, clipped to [0,1]",16.462927,0.3599301,0.0,ok,,same noisy image reused for all methods
+set12,05,256,256,40,3927817417,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.09099,0.72524799,0.921,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,05,256,256,40,3927817417,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",22.596544,0.58057348,7.048,ok,,Optimized replacement for Python-loop median filter.
+set12,05,256,256,40,3927817417,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.055486,0.7796827,155.953,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,05,256,256,40,3927817417,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.730781,0.68163484,6657.043,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,05,256,256,40,3927817417,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",27.11276,0.85904195,757.361,ok,,Reference classical upper baseline for AWGN.
+set12,05,256,256,50,3558365263,Noisy,"clean + AWGN, clipped to [0,1]",14.76758,0.30310036,0.0,ok,,same noisy image reused for all methods
+set12,05,256,256,50,3558365263,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.485171,0.68043551,1.445,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,05,256,256,50,3558365263,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",20.96818,0.51058912,6.443,ok,,Optimized replacement for Python-loop median filter.
+set12,05,256,256,50,3558365263,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",23.033155,0.72189874,156.983,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,05,256,256,50,3558365263,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.347785,0.71168293,10400.552,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,05,256,256,50,3558365263,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",25.690096,0.82172326,740.832,ok,,Reference classical upper baseline for AWGN.
+set12,05,256,256,75,1215352332,Noisy,"clean + AWGN, clipped to [0,1]",11.934328,0.2125819,0.0,ok,,same noisy image reused for all methods
+set12,05,256,256,75,1215352332,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",21.042428,0.58562771,1.457,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,05,256,256,75,1215352332,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",18.017386,0.39482188,7.085,ok,,Optimized replacement for Python-loop median filter.
+set12,05,256,256,75,1215352332,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",18.685284,0.5501495,153.903,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,05,256,256,75,1215352332,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,20.97936,0.6346654,12313.108,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,05,256,256,75,1215352332,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",23.08032,0.74511008,928.127,ok,,Reference classical upper baseline for AWGN.
+set12,06,256,256,5,96787553,Noisy,"clean + AWGN, clipped to [0,1]",34.185866,0.86814324,0.0,ok,,same noisy image reused for all methods
+set12,06,256,256,5,96787553,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.815125,0.79684563,1.033,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,06,256,256,5,96787553,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",27.639971,0.87641991,6.315,ok,,Optimized replacement for Python-loop median filter.
+set12,06,256,256,5,96787553,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",36.839656,0.95056335,133.179,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,06,256,256,5,96787553,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,,,1063.121,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,06,256,256,5,96787553,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",37.515501,0.95870132,1084.995,ok,,Reference classical upper baseline for AWGN.
+set12,06,256,256,10,431968890,Noisy,"clean + AWGN, clipped to [0,1]",28.135971,0.67835013,0.0,ok,,same noisy image reused for all methods
+set12,06,256,256,10,431968890,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.764676,0.78447329,1.345,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,06,256,256,10,431968890,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",27.009702,0.81125528,6.686,ok,,Optimized replacement for Python-loop median filter.
+set12,06,256,256,10,431968890,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",32.490187,0.90931283,139.063,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,06,256,256,10,431968890,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,30.772165,0.80143469,1083.716,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,06,256,256,10,431968890,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",33.378253,0.92953229,795.915,ok,,Reference classical upper baseline for AWGN.
+set12,06,256,256,15,3429633106,Noisy,"clean + AWGN, clipped to [0,1]",24.596055,0.54786024,0.0,ok,,same noisy image reused for all methods
+set12,06,256,256,15,3429633106,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.706744,0.76804059,0.988,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,06,256,256,15,3429633106,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",26.274531,0.73428922,6.75,ok,,Optimized replacement for Python-loop median filter.
+set12,06,256,256,15,3429633106,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",30.167313,0.8750814,142.91,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,06,256,256,15,3429633106,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.767125,0.68974561,1110.831,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,06,256,256,15,3429633106,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",31.137447,0.90412513,763.75,ok,,Reference classical upper baseline for AWGN.
+set12,06,256,256,20,3672806896,Noisy,"clean + AWGN, clipped to [0,1]",22.144554,0.46080613,0.0,ok,,same noisy image reused for all methods
+set12,06,256,256,20,3672806896,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.606592,0.74389344,1.158,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,06,256,256,20,3672806896,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.3373,0.65868761,6.46,ok,,Optimized replacement for Python-loop median filter.
+set12,06,256,256,20,3672806896,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",28.545486,0.84437905,149.722,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,06,256,256,20,3672806896,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.972918,0.71956707,1691.842,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,06,256,256,20,3672806896,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.584682,0.87910658,774.809,ok,,Reference classical upper baseline for AWGN.
+set12,06,256,256,25,441689664,Noisy,"clean + AWGN, clipped to [0,1]",20.33624,0.39992598,0.0,ok,,same noisy image reused for all methods
+set12,06,256,256,25,441689664,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.491048,0.7240021,0.93,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,06,256,256,25,441689664,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.47383,0.59600344,7.084,ok,,Optimized replacement for Python-loop median filter.
+set12,06,256,256,25,441689664,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",27.117425,0.81495696,154.427,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,06,256,256,25,441689664,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.900021,0.66876105,1754.051,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,06,256,256,25,441689664,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.450269,0.85910002,769.555,ok,,Reference classical upper baseline for AWGN.
+set12,06,256,256,30,3879887279,Noisy,"clean + AWGN, clipped to [0,1]",18.921221,0.35501591,0.0,ok,,same noisy image reused for all methods
+set12,06,256,256,30,3879887279,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.31806,0.69805743,0.932,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,06,256,256,30,3879887279,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.592258,0.54098476,7.613,ok,,Optimized replacement for Python-loop median filter.
+set12,06,256,256,30,3879887279,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.740815,0.79361861,156.224,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,06,256,256,30,3879887279,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.217714,0.63836982,1778.373,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,06,256,256,30,3879887279,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",27.602961,0.84298533,830.085,ok,,Reference classical upper baseline for AWGN.
+set12,06,256,256,35,1072996054,Noisy,"clean + AWGN, clipped to [0,1]",17.735067,0.31712552,0.0,ok,,same noisy image reused for all methods
+set12,06,256,256,35,1072996054,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.130652,0.67507476,0.898,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,06,256,256,35,1072996054,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",22.774695,0.4946478,6.458,ok,,Optimized replacement for Python-loop median filter.
+set12,06,256,256,35,1072996054,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",24.623534,0.76845677,156.055,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,06,256,256,35,1072996054,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.053714,0.7128413,7150.976,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,06,256,256,35,1072996054,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.861348,0.82338762,761.092,ok,,Reference classical upper baseline for AWGN.
+set12,06,256,256,40,779361595,Noisy,"clean + AWGN, clipped to [0,1]",16.73154,0.28591055,0.0,ok,,same noisy image reused for all methods
+set12,06,256,256,40,779361595,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.916426,0.6475418,1.511,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,06,256,256,40,779361595,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",22.021774,0.45271404,6.579,ok,,Optimized replacement for Python-loop median filter.
+set12,06,256,256,40,779361595,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",23.748894,0.74525713,156.111,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,06,256,256,40,779361595,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.774236,0.70781883,7236.219,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,06,256,256,40,779361595,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.196789,0.80721777,768.883,ok,,Reference classical upper baseline for AWGN.
+set12,06,256,256,50,2189900437,Noisy,"clean + AWGN, clipped to [0,1]",15.071697,0.23697608,0.0,ok,,same noisy image reused for all methods
+set12,06,256,256,50,2189900437,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.403263,0.60059892,0.876,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,06,256,256,50,2189900437,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",20.591449,0.38932554,7.499,ok,,Optimized replacement for Python-loop median filter.
+set12,06,256,256,50,2189900437,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",22.276279,0.69743678,152.676,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,06,256,256,50,2189900437,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,23.808127,0.73340608,11283.829,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,06,256,256,50,2189900437,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",24.970921,0.77685104,790.819,ok,,Reference classical upper baseline for AWGN.
+set12,06,256,256,75,3483220111,Noisy,"clean + AWGN, clipped to [0,1]",12.256069,0.15820514,0.0,ok,,same noisy image reused for all methods
+set12,06,256,256,75,3483220111,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",20.919202,0.51081617,1.318,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,06,256,256,75,3483220111,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",17.951299,0.28675494,6.507,ok,,Optimized replacement for Python-loop median filter.
+set12,06,256,256,75,3483220111,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",19.370612,0.57979821,149.687,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,06,256,256,75,3483220111,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,20.489307,0.65058738,12609.979,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,06,256,256,75,3483220111,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",22.401002,0.70907608,746.174,ok,,Reference classical upper baseline for AWGN.
+set12,07,256,256,5,1694816793,Noisy,"clean + AWGN, clipped to [0,1]",34.211385,0.87473901,0.0,ok,,same noisy image reused for all methods
+set12,07,256,256,5,1694816793,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.443439,0.8240395,1.386,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,07,256,256,5,1694816793,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",28.638818,0.89106086,6.273,ok,,Optimized replacement for Python-loop median filter.
+set12,07,256,256,5,1694816793,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",37.017094,0.95936321,133.991,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,07,256,256,5,1694816793,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,,,1006.958,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,07,256,256,5,1694816793,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",37.916758,0.9696522,740.463,ok,,Reference classical upper baseline for AWGN.
+set12,07,256,256,10,1683234047,Noisy,"clean + AWGN, clipped to [0,1]",28.259043,0.69258001,0.0,ok,,same noisy image reused for all methods
+set12,07,256,256,10,1683234047,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.373245,0.81185265,1.264,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,07,256,256,10,1683234047,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",27.881866,0.8282117,6.405,ok,,Optimized replacement for Python-loop median filter.
+set12,07,256,256,10,1683234047,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",32.534061,0.90903431,142.274,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,07,256,256,10,1683234047,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,30.76792,0.80792758,1069.203,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,07,256,256,10,1683234047,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",33.661331,0.93325076,740.446,ok,,Reference classical upper baseline for AWGN.
+set12,07,256,256,15,1987367203,Noisy,"clean + AWGN, clipped to [0,1]",24.865333,0.56273416,0.0,ok,,same noisy image reused for all methods
+set12,07,256,256,15,1987367203,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.270338,0.79273173,1.342,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,07,256,256,15,1987367203,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",26.979591,0.75340766,6.486,ok,,Optimized replacement for Python-loop median filter.
+set12,07,256,256,15,1987367203,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",30.371066,0.86805781,146.059,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,07,256,256,15,1987367203,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.962115,0.70470823,1097.804,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,07,256,256,15,1987367203,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",31.515886,0.90118256,742.918,ok,,Reference classical upper baseline for AWGN.
+set12,07,256,256,20,2254927695,Noisy,"clean + AWGN, clipped to [0,1]",22.511523,0.47658597,0.0,ok,,same noisy image reused for all methods
+set12,07,256,256,20,2254927695,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.136859,0.76985451,1.307,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,07,256,256,20,2254927695,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.943207,0.6795346,6.729,ok,,Optimized replacement for Python-loop median filter.
+set12,07,256,256,20,2254927695,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",28.876405,0.83530296,147.34,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,07,256,256,20,2254927695,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.666337,0.74904215,1674.716,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,07,256,256,20,2254927695,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.994174,0.87403144,741.392,ok,,Reference classical upper baseline for AWGN.
+set12,07,256,256,25,209077655,Noisy,"clean + AWGN, clipped to [0,1]",20.590672,0.40940682,0.0,ok,,same noisy image reused for all methods
+set12,07,256,256,25,209077655,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.945463,0.74670818,1.567,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,07,256,256,25,209077655,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.992339,0.61851721,7.806,ok,,Optimized replacement for Python-loop median filter.
+set12,07,256,256,25,209077655,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",27.677467,0.80520557,151.474,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,07,256,256,25,209077655,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.291589,0.68971315,1723.118,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,07,256,256,25,209077655,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.802342,0.85175805,742.507,ok,,Reference classical upper baseline for AWGN.
+set12,07,256,256,30,3058797068,Noisy,"clean + AWGN, clipped to [0,1]",19.113785,0.36259031,0.0,ok,,same noisy image reused for all methods
+set12,07,256,256,30,3058797068,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.753018,0.72178704,1.087,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,07,256,256,30,3058797068,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.054087,0.56471334,8.149,ok,,Optimized replacement for Python-loop median filter.
+set12,07,256,256,30,3058797068,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",26.707922,0.78164048,151.474,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,07,256,256,30,3058797068,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.377178,0.64960986,1756.713,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,07,256,256,30,3058797068,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",27.98911,0.83390109,742.658,ok,,Reference classical upper baseline for AWGN.
+set12,07,256,256,35,1771990048,Noisy,"clean + AWGN, clipped to [0,1]",17.914106,0.32464779,0.0,ok,,same noisy image reused for all methods
+set12,07,256,256,35,1771990048,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.507994,0.6874254,1.336,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,07,256,256,35,1771990048,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.187035,0.51409962,6.451,ok,,Optimized replacement for Python-loop median filter.
+set12,07,256,256,35,1771990048,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.742949,0.75197164,153.514,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,07,256,256,35,1771990048,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.249073,0.66913642,6878.029,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,07,256,256,35,1771990048,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",27.121456,0.81108989,741.793,ok,,Reference classical upper baseline for AWGN.
+set12,07,256,256,40,2255597611,Noisy,"clean + AWGN, clipped to [0,1]",16.795671,0.29181593,0.0,ok,,same noisy image reused for all methods
+set12,07,256,256,40,2255597611,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.249453,0.65906045,0.934,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,07,256,256,40,2255597611,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",22.418624,0.47638349,6.768,ok,,Optimized replacement for Python-loop median filter.
+set12,07,256,256,40,2255597611,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",24.896171,0.72807206,152.74,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,07,256,256,40,2255597611,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.627239,0.63399964,7059.293,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,07,256,256,40,2255597611,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.443839,0.79325421,745.959,ok,,Reference classical upper baseline for AWGN.
+set12,07,256,256,50,763466904,Noisy,"clean + AWGN, clipped to [0,1]",14.963398,0.24183816,0.0,ok,,same noisy image reused for all methods
+set12,07,256,256,50,763466904,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",21.610927,0.60581772,0.895,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,07,256,256,50,763466904,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",20.915388,0.41060471,6.664,ok,,Optimized replacement for Python-loop median filter.
+set12,07,256,256,50,763466904,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",23.222962,0.68197883,152.833,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,07,256,256,50,763466904,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,23.702389,0.62916863,10889.996,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,07,256,256,50,763466904,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",24.906833,0.75661673,731.886,ok,,Reference classical upper baseline for AWGN.
+set12,07,256,256,75,659689850,Noisy,"clean + AWGN, clipped to [0,1]",12.097097,0.17120039,0.0,ok,,same noisy image reused for all methods
+set12,07,256,256,75,659689850,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",20.081184,0.50032682,1.531,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,07,256,256,75,659689850,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",18.123056,0.30619686,7.122,ok,,Optimized replacement for Python-loop median filter.
+set12,07,256,256,75,659689850,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",19.349621,0.57400778,150.135,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,07,256,256,75,659689850,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,20.630959,0.59299978,12266.558,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,07,256,256,75,659689850,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",22.258146,0.69569156,743.597,ok,,Reference classical upper baseline for AWGN.
+set12,08,512,512,5,2330989501,Noisy,"clean + AWGN, clipped to [0,1]",34.160764,0.85263146,0.0,ok,,same noisy image reused for all methods
+set12,08,512,512,5,2330989501,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",30.120742,0.86273962,4.575,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,08,512,512,5,2330989501,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",34.298691,0.89837838,25.478,ok,,Optimized replacement for Python-loop median filter.
+set12,08,512,512,5,2330989501,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",37.748936,0.93772517,525.441,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,08,512,512,5,2330989501,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,36.091432,0.90622642,4281.214,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,08,512,512,5,2330989501,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",38.674226,0.94689096,1976.583,ok,,Reference classical upper baseline for AWGN.
+set12,08,512,512,10,970382512,Noisy,"clean + AWGN, clipped to [0,1]",28.130479,0.63071461,0.0,ok,,same noisy image reused for all methods
+set12,08,512,512,10,970382512,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",29.92833,0.84925291,4.51,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,08,512,512,10,970382512,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",32.190524,0.82545486,25.443,ok,,Optimized replacement for Python-loop median filter.
+set12,08,512,512,10,970382512,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",34.452932,0.89597187,554.133,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,08,512,512,10,970382512,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,31.11181,0.76602565,4538.546,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,08,512,512,10,970382512,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",35.894783,0.91922068,2060.353,ok,,Reference classical upper baseline for AWGN.
+set12,08,512,512,15,2058322760,Noisy,"clean + AWGN, clipped to [0,1]",24.604936,0.47265255,0.0,ok,,same noisy image reused for all methods
+set12,08,512,512,15,2058322760,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",29.644658,0.82883506,5.446,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,08,512,512,15,2058322760,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",30.214949,0.74155072,25.39,ok,,Optimized replacement for Python-loop median filter.
+set12,08,512,512,15,2058322760,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",32.492909,0.86196746,571.316,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,08,512,512,15,2058322760,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,28.135303,0.63449164,4655.146,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,08,512,512,15,2058322760,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",34.254366,0.89710335,2088.274,ok,,Reference classical upper baseline for AWGN.
+set12,08,512,512,20,1418856058,Noisy,"clean + AWGN, clipped to [0,1]",22.139464,0.36995004,0.0,ok,,same noisy image reused for all methods
+set12,08,512,512,20,1418856058,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",29.295652,0.80389721,4.457,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,08,512,512,20,1418856058,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",28.472774,0.6574037,26.784,ok,,Optimized replacement for Python-loop median filter.
+set12,08,512,512,20,1418856058,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",31.091566,0.83314423,575.804,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,08,512,512,20,1418856058,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,28.656734,0.67931644,7283.151,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,08,512,512,20,1418856058,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",33.056158,0.87826646,2167.241,ok,,Reference classical upper baseline for AWGN.
+set12,08,512,512,25,1613961745,Noisy,"clean + AWGN, clipped to [0,1]",20.241529,0.2987916,0.0,ok,,same noisy image reused for all methods
+set12,08,512,512,25,1613961745,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",28.860298,0.77522207,4.51,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,08,512,512,25,1613961745,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",26.974065,0.58248626,27.435,ok,,Optimized replacement for Python-loop median filter.
+set12,08,512,512,25,1613961745,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",29.909029,0.80589424,593.207,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,08,512,512,25,1613961745,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.300516,0.61009668,7546.014,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,08,512,512,25,1613961745,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",32.083478,0.86228615,2153.519,ok,,Reference classical upper baseline for AWGN.
+set12,08,512,512,30,1448715601,Noisy,"clean + AWGN, clipped to [0,1]",18.699259,0.24568445,0.0,ok,,same noisy image reused for all methods
+set12,08,512,512,30,1448715601,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",28.312388,0.74007217,4.69,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,08,512,512,30,1448715601,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.57136,0.51103818,26.992,ok,,Optimized replacement for Python-loop median filter.
+set12,08,512,512,30,1448715601,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",28.903567,0.7791059,583.009,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,08,512,512,30,1448715601,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.1513,0.54709929,7601.159,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,08,512,512,30,1448715601,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",31.185112,0.8432571,2097.186,ok,,Reference classical upper baseline for AWGN.
+set12,08,512,512,35,4102756420,Noisy,"clean + AWGN, clipped to [0,1]",17.42699,0.20859134,0.0,ok,,same noisy image reused for all methods
+set12,08,512,512,35,4102756420,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",27.868577,0.71164281,4.609,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,08,512,512,35,4102756420,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.465483,0.45937476,26.7,ok,,Optimized replacement for Python-loop median filter.
+set12,08,512,512,35,4102756420,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",28.107746,0.75763062,584.058,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,08,512,512,35,4102756420,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.889655,0.60696067,30682.296,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,08,512,512,35,4102756420,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",30.602597,0.83195471,2138.961,ok,,Reference classical upper baseline for AWGN.
+set12,08,512,512,40,4086953357,Noisy,"clean + AWGN, clipped to [0,1]",16.362315,0.17979308,0.0,ok,,same noisy image reused for all methods
+set12,08,512,512,40,4086953357,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",27.315834,0.6789945,5.223,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,08,512,512,40,4086953357,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.40268,0.4098772,25.885,ok,,Optimized replacement for Python-loop median filter.
+set12,08,512,512,40,4086953357,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",27.391546,0.7358703,569.49,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,08,512,512,40,4086953357,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.240955,0.57635515,31427.154,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,08,512,512,40,4086953357,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.837807,0.81217287,2078.925,ok,,Reference classical upper baseline for AWGN.
+set12,08,512,512,50,4192325887,Noisy,"clean + AWGN, clipped to [0,1]",14.622507,0.13914961,0.0,ok,,same noisy image reused for all methods
+set12,08,512,512,50,4192325887,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.287397,0.61971913,4.77,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,08,512,512,50,4192325887,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",21.644352,0.33700805,26.0,ok,,Optimized replacement for Python-loop median filter.
+set12,08,512,512,50,4192325887,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",26.012146,0.69824365,569.007,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,08,512,512,50,4192325887,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.275753,0.61854735,49121.592,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,08,512,512,50,4192325887,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.828884,0.79059557,2074.386,ok,,Reference classical upper baseline for AWGN.
+set12,08,512,512,75,4049408902,Noisy,"clean + AWGN, clipped to [0,1]",11.790957,0.08274481,0.0,ok,,same noisy image reused for all methods
+set12,08,512,512,75,4049408902,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.77416,0.50141978,4.597,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,08,512,512,75,4049408902,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",18.345789,0.22129565,25.945,ok,,Optimized replacement for Python-loop median filter.
+set12,08,512,512,75,4049408902,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",22.950719,0.62715805,565.842,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,08,512,512,75,4049408902,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,23.361176,0.61661659,53307.249,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,08,512,512,75,4049408902,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.082272,0.73573463,2047.407,ok,,Reference classical upper baseline for AWGN.
+set12,09,512,512,5,2606229935,Noisy,"clean + AWGN, clipped to [0,1]",34.16106,0.89771154,0.0,ok,,same noisy image reused for all methods
+set12,09,512,512,5,2606229935,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.091474,0.71580548,4.97,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,09,512,512,5,2606229935,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.299486,0.80098761,24.478,ok,,Optimized replacement for Python-loop median filter.
+set12,09,512,512,5,2606229935,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",37.033046,0.9581943,485.877,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,09,512,512,5,2606229935,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,35.58339,0.93382792,3953.502,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,09,512,512,5,2606229935,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",38.146492,0.9661136,1939.701,ok,,Reference classical upper baseline for AWGN.
+set12,09,512,512,10,1828386827,Noisy,"clean + AWGN, clipped to [0,1]",28.133729,0.73338419,0.0,ok,,same noisy image reused for all methods
+set12,09,512,512,10,1828386827,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.045424,0.70724149,4.981,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,09,512,512,10,1828386827,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.937393,0.74742261,26.154,ok,,Optimized replacement for Python-loop median filter.
+set12,09,512,512,10,1828386827,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",33.418545,0.92362455,518.104,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,09,512,512,10,1828386827,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,30.462486,0.82709665,4339.695,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,09,512,512,10,1828386827,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",34.849603,0.94365037,1928.614,ok,,Reference classical upper baseline for AWGN.
+set12,09,512,512,15,3983802602,Noisy,"clean + AWGN, clipped to [0,1]",24.634183,0.60294495,0.0,ok,,same noisy image reused for all methods
+set12,09,512,512,15,3983802602,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.965178,0.69338457,5.023,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,09,512,512,15,3983802602,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.421475,0.68172604,26.588,ok,,Optimized replacement for Python-loop median filter.
+set12,09,512,512,15,3983802602,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",31.075207,0.88503078,547.786,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,09,512,512,15,3983802602,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.447419,0.72240821,4493.216,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,09,512,512,15,3983802602,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",33.04417,0.92597053,1977.031,ok,,Reference classical upper baseline for AWGN.
+set12,09,512,512,20,3225935314,Noisy,"clean + AWGN, clipped to [0,1]",22.164921,0.50546836,0.0,ok,,same noisy image reused for all methods
+set12,09,512,512,20,3225935314,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.863759,0.6755666,5.462,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,09,512,512,20,3225935314,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.865261,0.61682407,26.436,ok,,Optimized replacement for Python-loop median filter.
+set12,09,512,512,20,3225935314,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",29.275736,0.84627323,578.79,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,09,512,512,20,3225935314,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.53467,0.75004636,6934.65,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,09,512,512,20,3225935314,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",31.711715,0.90692005,1983.225,ok,,Reference classical upper baseline for AWGN.
+set12,09,512,512,25,4276233989,Noisy,"clean + AWGN, clipped to [0,1]",20.289419,0.43103014,0.0,ok,,same noisy image reused for all methods
+set12,09,512,512,25,4276233989,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.732763,0.65697291,4.752,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,09,512,512,25,4276233989,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.279246,0.56016732,28.264,ok,,Optimized replacement for Python-loop median filter.
+set12,09,512,512,25,4276233989,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",27.852749,0.80770525,571.573,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,09,512,512,25,4276233989,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.243666,0.69450691,7761.307,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,09,512,512,25,4276233989,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",30.648599,0.88833419,2033.467,ok,,Reference classical upper baseline for AWGN.
+set12,09,512,512,30,3264949666,Noisy,"clean + AWGN, clipped to [0,1]",18.789012,0.37269276,0.0,ok,,same noisy image reused for all methods
+set12,09,512,512,30,3264949666,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.570982,0.63549482,4.719,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,09,512,512,30,3264949666,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",22.628329,0.50500013,26.588,ok,,Optimized replacement for Python-loop median filter.
+set12,09,512,512,30,3264949666,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",26.597208,0.76794441,666.559,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,09,512,512,30,3264949666,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.185815,0.64393019,7671.211,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,09,512,512,30,3264949666,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.717002,0.86942645,1957.069,ok,,Reference classical upper baseline for AWGN.
+set12,09,512,512,35,259173311,Noisy,"clean + AWGN, clipped to [0,1]",17.543637,0.32517863,0.0,ok,,same noisy image reused for all methods
+set12,09,512,512,35,259173311,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.390776,0.61514381,5.214,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,09,512,512,35,259173311,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",22.009669,0.46112938,25.724,ok,,Optimized replacement for Python-loop median filter.
+set12,09,512,512,35,259173311,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.570955,0.73113763,589.384,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,09,512,512,35,259173311,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.629554,0.68767457,32882.461,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,09,512,512,35,259173311,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.870125,0.84540971,2402.59,ok,,Reference classical upper baseline for AWGN.
+set12,09,512,512,40,468882101,Noisy,"clean + AWGN, clipped to [0,1]",16.475115,0.28643251,0.0,ok,,same noisy image reused for all methods
+set12,09,512,512,40,468882101,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.182351,0.59301321,4.625,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,09,512,512,40,468882101,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",21.413592,0.42291491,25.866,ok,,Optimized replacement for Python-loop median filter.
+set12,09,512,512,40,468882101,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",24.743621,0.698103,605.978,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,09,512,512,40,468882101,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.907967,0.65626155,31742.497,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,09,512,512,40,468882101,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.135286,0.82504,2243.404,ok,,Reference classical upper baseline for AWGN.
+set12,09,512,512,50,2602031743,Noisy,"clean + AWGN, clipped to [0,1]",14.738599,0.22636685,0.0,ok,,same noisy image reused for all methods
+set12,09,512,512,50,2602031743,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.717543,0.55141375,5.245,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,09,512,512,50,2602031743,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",20.220671,0.35819552,26.47,ok,,Optimized replacement for Python-loop median filter.
+set12,09,512,512,50,2602031743,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",23.224151,0.63067563,563.24,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,09,512,512,50,2602031743,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.475703,0.6579357,48930.699,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,09,512,512,50,2602031743,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.741067,0.78222703,2625.784,ok,,Reference classical upper baseline for AWGN.
+set12,09,512,512,75,934961953,Noisy,"clean + AWGN, clipped to [0,1]",11.915064,0.1393953,0.0,ok,,same noisy image reused for all methods
+set12,09,512,512,75,934961953,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",21.305419,0.4588732,5.204,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,09,512,512,75,934961953,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",17.664392,0.24903495,26.919,ok,,Optimized replacement for Python-loop median filter.
+set12,09,512,512,75,934961953,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",20.542816,0.50084302,584.929,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,09,512,512,75,934961953,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,21.034083,0.54306753,56832.887,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,09,512,512,75,934961953,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",23.666295,0.6753561,2224.441,ok,,Reference classical upper baseline for AWGN.
+set12,10,512,512,5,1191716588,Noisy,"clean + AWGN, clipped to [0,1]",34.156711,0.89213719,0.0,ok,,same noisy image reused for all methods
+set12,10,512,512,5,1191716588,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.951739,0.76792825,4.773,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,10,512,512,5,1191716588,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",30.527022,0.84245612,26.711,ok,,Optimized replacement for Python-loop median filter.
+set12,10,512,512,5,1191716588,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",36.170604,0.92689826,533.583,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,10,512,512,5,1191716588,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,35.468654,0.92174039,4653.668,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,10,512,512,5,1191716588,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",37.235858,0.94327146,2825.148,ok,,Reference classical upper baseline for AWGN.
+set12,10,512,512,10,2653144735,Noisy,"clean + AWGN, clipped to [0,1]",28.130074,0.70808641,0.0,ok,,same noisy image reused for all methods
+set12,10,512,512,10,2653144735,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.85486,0.75856686,5.0,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,10,512,512,10,2653144735,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",29.450884,0.78933637,28.1,ok,,Optimized replacement for Python-loop median filter.
+set12,10,512,512,10,2653144735,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",32.529116,0.8613008,602.314,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,10,512,512,10,2653144735,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,30.562128,0.80118797,5082.593,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,10,512,512,10,2653144735,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",33.914051,0.89390938,2748.027,ok,,Reference classical upper baseline for AWGN.
+set12,10,512,512,15,1772028957,Noisy,"clean + AWGN, clipped to [0,1]",24.640737,0.56043286,0.0,ok,,same noisy image reused for all methods
+set12,10,512,512,15,1772028957,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.710387,0.74441384,7.081,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,10,512,512,15,1772028957,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",28.227336,0.72465293,34.621,ok,,Optimized replacement for Python-loop median filter.
+set12,10,512,512,15,1772028957,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",30.461829,0.80781199,690.968,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,10,512,512,15,1772028957,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.704656,0.68793592,5279.469,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,10,512,512,15,1772028957,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",32.164607,0.86049125,2331.636,ok,,Reference classical upper baseline for AWGN.
+set12,10,512,512,20,3353572787,Noisy,"clean + AWGN, clipped to [0,1]",22.170956,0.45329818,0.0,ok,,same noisy image reused for all methods
+set12,10,512,512,20,3353572787,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.521174,0.72670693,5.468,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,10,512,512,20,3353572787,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",26.988649,0.6575001,28.327,ok,,Optimized replacement for Python-loop median filter.
+set12,10,512,512,20,3353572787,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",28.954004,0.76389967,589.077,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,10,512,512,20,3353572787,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.612625,0.70102414,7722.53,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,10,512,512,20,3353572787,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",30.869888,0.83014366,2649.892,ok,,Reference classical upper baseline for AWGN.
+set12,10,512,512,25,3200555138,Noisy,"clean + AWGN, clipped to [0,1]",20.273161,0.37441894,0.0,ok,,same noisy image reused for all methods
+set12,10,512,512,25,3200555138,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.260069,0.7036029,4.5,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,10,512,512,25,3200555138,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.814122,0.59267852,28.355,ok,,Optimized replacement for Python-loop median filter.
+set12,10,512,512,25,3200555138,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",27.786288,0.7241099,594.655,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,10,512,512,25,3200555138,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.384423,0.63662593,7831.355,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,10,512,512,25,3200555138,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.842942,0.80191099,2099.787,ok,,Reference classical upper baseline for AWGN.
+set12,10,512,512,30,2939901556,Noisy,"clean + AWGN, clipped to [0,1]",18.731971,0.31614012,0.0,ok,,same noisy image reused for all methods
+set12,10,512,512,30,2939901556,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.992595,0.68360861,4.523,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,10,512,512,30,2939901556,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.754012,0.53916781,27.419,ok,,Optimized replacement for Python-loop median filter.
+set12,10,512,512,30,2939901556,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",26.789801,0.69111497,589.637,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,10,512,512,30,2939901556,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.33949,0.58102153,7664.423,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,10,512,512,30,2939901556,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.00987,0.7792449,2115.076,ok,,Reference classical upper baseline for AWGN.
+set12,10,512,512,35,2184754431,Noisy,"clean + AWGN, clipped to [0,1]",17.465765,0.27202267,0.0,ok,,same noisy image reused for all methods
+set12,10,512,512,35,2184754431,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.662006,0.6598505,4.518,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,10,512,512,35,2184754431,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.801575,0.491203,27.92,ok,,Optimized replacement for Python-loop median filter.
+set12,10,512,512,35,2184754431,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.968625,0.66209339,605.038,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,10,512,512,35,2184754431,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.609959,0.60760343,32264.725,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,10,512,512,35,2184754431,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.297055,0.75674761,2188.968,ok,,Reference classical upper baseline for AWGN.
+set12,10,512,512,40,1779831346,Noisy,"clean + AWGN, clipped to [0,1]",16.362667,0.23567555,0.0,ok,,same noisy image reused for all methods
+set12,10,512,512,40,1779831346,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.270505,0.63335595,5.4,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,10,512,512,40,1779831346,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",22.845611,0.44662609,27.811,ok,,Optimized replacement for Python-loop median filter.
+set12,10,512,512,40,1779831346,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.184867,0.63261262,613.329,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,10,512,512,40,1779831346,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.943033,0.57165696,31696.373,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,10,512,512,40,1779831346,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",27.621269,0.73314483,2136.575,ok,,Reference classical upper baseline for AWGN.
+set12,10,512,512,50,1498338940,Noisy,"clean + AWGN, clipped to [0,1]",14.586895,0.18215086,0.0,ok,,same noisy image reused for all methods
+set12,10,512,512,50,1498338940,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.51833,0.58660835,4.687,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,10,512,512,50,1498338940,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",21.269997,0.37451609,27.776,ok,,Optimized replacement for Python-loop median filter.
+set12,10,512,512,50,1498338940,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",23.84292,0.57679509,575.939,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,10,512,512,50,1498338940,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.51417,0.56307527,49891.593,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,10,512,512,50,1498338940,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.415113,0.68969513,2073.674,ok,,Reference classical upper baseline for AWGN.
+set12,10,512,512,75,1719622362,Noisy,"clean + AWGN, clipped to [0,1]",11.74018,0.11102422,0.0,ok,,same noisy image reused for all methods
+set12,10,512,512,75,1719622362,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.656409,0.4812978,4.929,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,10,512,512,75,1719622362,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",18.19439,0.25748326,28.324,ok,,Optimized replacement for Python-loop median filter.
+set12,10,512,512,75,1719622362,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",21.438258,0.48458552,623.76,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,10,512,512,75,1719622362,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,21.90405,0.50181487,54387.042,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,10,512,512,75,1719622362,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",24.150306,0.60668884,2179.313,ok,,Reference classical upper baseline for AWGN.
+set12,11,512,512,5,663582677,Noisy,"clean + AWGN, clipped to [0,1]",34.14324,0.88729273,0.0,ok,,same noisy image reused for all methods
+set12,11,512,512,5,663582677,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",28.052194,0.80040709,4.551,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,11,512,512,5,663582677,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",31.662342,0.88342105,26.514,ok,,Optimized replacement for Python-loop median filter.
+set12,11,512,512,5,663582677,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",36.786027,0.94577678,504.827,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,11,512,512,5,663582677,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,35.717081,0.92635819,4230.666,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,11,512,512,5,663582677,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",37.739844,0.95796175,2079.145,ok,,Reference classical upper baseline for AWGN.
+set12,11,512,512,10,2112697009,Noisy,"clean + AWGN, clipped to [0,1]",28.142439,0.7018307,0.0,ok,,same noisy image reused for all methods
+set12,11,512,512,10,2112697009,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",27.941882,0.79078086,5.215,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,11,512,512,10,2112697009,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",30.354709,0.82536288,27.751,ok,,Optimized replacement for Python-loop median filter.
+set12,11,512,512,10,2112697009,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",32.659757,0.87951973,566.07,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,11,512,512,10,2112697009,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,30.668302,0.80394242,4585.414,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,11,512,512,10,2112697009,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",34.033155,0.9142794,2007.349,ok,,Reference classical upper baseline for AWGN.
+set12,11,512,512,15,1399385792,Noisy,"clean + AWGN, clipped to [0,1]",24.622574,0.55105814,0.0,ok,,same noisy image reused for all methods
+set12,11,512,512,15,1399385792,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",27.764871,0.77468414,4.554,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,11,512,512,15,1399385792,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",28.894271,0.75369329,26.503,ok,,Optimized replacement for Python-loop median filter.
+set12,11,512,512,15,1399385792,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",30.421008,0.82096775,583.26,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,11,512,512,15,1399385792,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.70309,0.68289562,4768.785,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,11,512,512,15,1399385792,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",31.942942,0.87288312,2040.061,ok,,Reference classical upper baseline for AWGN.
+set12,11,512,512,20,686034906,Noisy,"clean + AWGN, clipped to [0,1]",22.114858,0.4416693,0.0,ok,,same noisy image reused for all methods
+set12,11,512,512,20,686034906,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",27.503925,0.75444003,5.056,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,11,512,512,20,686034906,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",27.46262,0.67852699,27.42,ok,,Optimized replacement for Python-loop median filter.
+set12,11,512,512,20,686034906,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",29.009745,0.7759742,586.266,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,11,512,512,20,686034906,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.610041,0.69632332,7496.27,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,11,512,512,20,686034906,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",30.605878,0.8380498,2498.785,ok,,Reference classical upper baseline for AWGN.
+set12,11,512,512,25,173384662,Noisy,"clean + AWGN, clipped to [0,1]",20.246088,0.3633153,0.0,ok,,same noisy image reused for all methods
+set12,11,512,512,25,173384662,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",27.222879,0.73292154,5.27,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,11,512,512,25,173384662,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",26.217983,0.61321405,27.172,ok,,Optimized replacement for Python-loop median filter.
+set12,11,512,512,25,173384662,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",27.941429,0.73697165,583.665,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,11,512,512,25,173384662,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.42989,0.63412976,7444.386,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,11,512,512,25,173384662,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.624135,0.80704357,2054.242,ok,,Reference classical upper baseline for AWGN.
+set12,11,512,512,30,3667542462,Noisy,"clean + AWGN, clipped to [0,1]",18.720142,0.30322666,0.0,ok,,same noisy image reused for all methods
+set12,11,512,512,30,3667542462,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.880686,0.7079958,4.996,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,11,512,512,30,3667542462,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.024593,0.55040461,27.227,ok,,Optimized replacement for Python-loop median filter.
+set12,11,512,512,30,3667542462,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",27.048063,0.70150009,585.693,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,11,512,512,30,3667542462,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.411345,0.57515439,7627.55,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,11,512,512,30,3667542462,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.812641,0.77947255,2072.676,ok,,Reference classical upper baseline for AWGN.
+set12,11,512,512,35,4277379418,Noisy,"clean + AWGN, clipped to [0,1]",17.484483,0.25810672,0.0,ok,,same noisy image reused for all methods
+set12,11,512,512,35,4277379418,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.509954,0.68427946,4.536,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,11,512,512,35,4277379418,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.023347,0.49999454,27.601,ok,,Optimized replacement for Python-loop median filter.
+set12,11,512,512,35,4277379418,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",26.275685,0.66998217,582.256,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,11,512,512,35,4277379418,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.818243,0.61733722,30761.522,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,11,512,512,35,4277379418,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.18406,0.75662397,2080.102,ok,,Reference classical upper baseline for AWGN.
+set12,11,512,512,40,2087272172,Noisy,"clean + AWGN, clipped to [0,1]",16.395524,0.22131116,0.0,ok,,same noisy image reused for all methods
+set12,11,512,512,40,2087272172,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.144,0.65916941,5.226,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,11,512,512,40,2087272172,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.077482,0.45384363,28.274,ok,,Optimized replacement for Python-loop median filter.
+set12,11,512,512,40,2087272172,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.667513,0.64275262,627.563,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,11,512,512,40,2087272172,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.220703,0.58299315,31617.774,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,11,512,512,40,2087272172,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",27.676553,0.73692482,2132.498,ok,,Reference classical upper baseline for AWGN.
+set12,11,512,512,50,3788151969,Noisy,"clean + AWGN, clipped to [0,1]",14.663791,0.17079083,0.0,ok,,same noisy image reused for all methods
+set12,11,512,512,50,3788151969,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.335631,0.6115572,4.907,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,11,512,512,50,3788151969,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",21.414824,0.37844286,26.981,ok,,Optimized replacement for Python-loop median filter.
+set12,11,512,512,50,3788151969,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",24.547644,0.59535355,567.27,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,11,512,512,50,3788151969,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.966971,0.58928166,55127.638,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,11,512,512,50,3788151969,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.707049,0.69796003,2221.503,ok,,Reference classical upper baseline for AWGN.
+set12,11,512,512,75,1008038192,Noisy,"clean + AWGN, clipped to [0,1]",11.819208,0.10053177,0.0,ok,,same noisy image reused for all methods
+set12,11,512,512,75,1008038192,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",23.114295,0.49979005,5.701,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,11,512,512,75,1008038192,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",18.2523,0.25194666,32.231,ok,,Optimized replacement for Python-loop median filter.
+set12,11,512,512,75,1008038192,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",21.990994,0.49714658,597.626,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,11,512,512,75,1008038192,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,22.26687,0.51988456,56815.941,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,11,512,512,75,1008038192,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",24.488772,0.6220404,2325.072,ok,,Reference classical upper baseline for AWGN.
+set12,12,512,512,5,1544503123,Noisy,"clean + AWGN, clipped to [0,1]",34.158163,0.90340645,0.0,ok,,same noisy image reused for all methods
+set12,12,512,512,5,1544503123,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.763082,0.75776605,5.41,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,12,512,512,5,1544503123,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",30.200797,0.8601344,24.927,ok,,Optimized replacement for Python-loop median filter.
+set12,12,512,512,5,1544503123,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",36.396379,0.93828921,501.551,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,12,512,512,5,1544503123,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,,,4336.96,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,12,512,512,5,1544503123,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",37.456221,0.95423924,2554.14,ok,,Reference classical upper baseline for AWGN.
+set12,12,512,512,10,3575584065,Noisy,"clean + AWGN, clipped to [0,1]",28.16436,0.73377545,0.0,ok,,same noisy image reused for all methods
+set12,12,512,512,10,3575584065,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.663134,0.7486767,5.284,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,12,512,512,10,3575584065,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",29.174717,0.80831497,28.868,ok,,Optimized replacement for Python-loop median filter.
+set12,12,512,512,10,3575584065,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",32.439359,0.87198483,570.459,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,12,512,512,10,3575584065,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,30.509836,0.81794515,4676.638,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,12,512,512,10,3575584065,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",34.011794,0.91226958,3077.022,ok,,Reference classical upper baseline for AWGN.
+set12,12,512,512,15,3804015973,Noisy,"clean + AWGN, clipped to [0,1]",24.659861,0.59066202,0.0,ok,,same noisy image reused for all methods
+set12,12,512,512,15,3804015973,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.520272,0.73567593,4.672,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,12,512,512,15,3804015973,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",27.9734,0.74368793,28.826,ok,,Optimized replacement for Python-loop median filter.
+set12,12,512,512,15,3804015973,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",30.021137,0.8130175,599.243,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,12,512,512,15,3804015973,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.542666,0.7059815,4745.086,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,12,512,512,15,3804015973,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",32.071901,0.87765084,2640.527,ok,,Reference classical upper baseline for AWGN.
+set12,12,512,512,20,1441317585,Noisy,"clean + AWGN, clipped to [0,1]",22.159573,0.482543,0.0,ok,,same noisy image reused for all methods
+set12,12,512,512,20,1441317585,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.326331,0.71898827,5.565,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,12,512,512,20,1441317585,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",26.7771,0.67909047,27.33,ok,,Optimized replacement for Python-loop median filter.
+set12,12,512,512,20,1441317585,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",28.315313,0.76046685,609.676,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,12,512,512,20,1441317585,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,27.367214,0.71065828,7602.128,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,12,512,512,20,1441317585,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",30.750223,0.84778148,2482.865,ok,,Reference classical upper baseline for AWGN.
+set12,12,512,512,25,4191801194,Noisy,"clean + AWGN, clipped to [0,1]",20.267173,0.40125255,0.0,ok,,same noisy image reused for all methods
+set12,12,512,512,25,4191801194,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",26.069122,0.69760652,6.563,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,12,512,512,25,4191801194,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",25.662947,0.61596464,32.702,ok,,Optimized replacement for Python-loop median filter.
+set12,12,512,512,25,4191801194,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",26.932407,0.70955707,740.396,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,12,512,512,25,4191801194,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,26.08507,0.64365193,7670.112,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,12,512,512,25,4191801194,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",29.661175,0.81850593,2139.445,ok,,Reference classical upper baseline for AWGN.
+set12,12,512,512,30,1383119980,Noisy,"clean + AWGN, clipped to [0,1]",18.725642,0.34092706,0.0,ok,,same noisy image reused for all methods
+set12,12,512,512,30,1383119980,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.779856,0.6782594,5.591,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,12,512,512,30,1383119980,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",24.6213,0.56321188,28.111,ok,,Optimized replacement for Python-loop median filter.
+set12,12,512,512,30,1383119980,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.959221,0.6685996,587.82,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,12,512,512,30,1383119980,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.991669,0.58662278,7593.627,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,12,512,512,30,1383119980,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",28.751512,0.79290364,2141.966,ok,,Reference classical upper baseline for AWGN.
+set12,12,512,512,35,1256516725,Noisy,"clean + AWGN, clipped to [0,1]",17.429812,0.2896095,0.0,ok,,same noisy image reused for all methods
+set12,12,512,512,35,1256516725,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.46,0.65234496,4.411,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,12,512,512,35,1256516725,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",23.655269,0.51139518,27.737,ok,,Optimized replacement for Python-loop median filter.
+set12,12,512,512,35,1256516725,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",25.121953,0.62588527,586.491,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,12,512,512,35,1256516725,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,25.100678,0.59668818,30917.135,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,12,512,512,35,1256516725,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",27.93206,0.76153009,2124.417,ok,,Reference classical upper baseline for AWGN.
+set12,12,512,512,40,15277811,Noisy,"clean + AWGN, clipped to [0,1]",16.327655,0.25117214,0.0,ok,,same noisy image reused for all methods
+set12,12,512,512,40,15277811,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",25.119028,0.6284496,4.985,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,12,512,512,40,15277811,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",22.762351,0.46837309,27.538,ok,,Optimized replacement for Python-loop median filter.
+set12,12,512,512,40,15277811,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",24.512622,0.59586675,619.784,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,12,512,512,40,15277811,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,24.429,0.55713305,31603.061,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,12,512,512,40,15277811,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",27.245347,0.73747086,2093.964,ok,,Reference classical upper baseline for AWGN.
+set12,12,512,512,50,3684679574,Noisy,"clean + AWGN, clipped to [0,1]",14.553774,0.1938136,0.0,ok,,same noisy image reused for all methods
+set12,12,512,512,50,3684679574,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",24.396735,0.58134066,4.798,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,12,512,512,50,3684679574,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",21.166301,0.39484027,28.353,ok,,Optimized replacement for Python-loop median filter.
+set12,12,512,512,50,3684679574,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",23.350281,0.53503127,575.471,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,12,512,512,50,3684679574,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,23.926183,0.53822518,49770.276,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,12,512,512,50,3684679574,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",26.117851,0.69004145,2108.944,ok,,Reference classical upper baseline for AWGN.
+set12,12,512,512,75,632023919,Noisy,"clean + AWGN, clipped to [0,1]",11.711305,0.11610828,0.0,ok,,same noisy image reused for all methods
+set12,12,512,512,75,632023919,Gaussian_SciPy,"scipy.ndimage.gaussian_filter(sigma_filter=1.5, reflect)",22.594589,0.48017946,4.628,ok,,Optimized replacement for Python-loop Gaussian filter.
+set12,12,512,512,75,632023919,Median_SciPy,"scipy.ndimage.median_filter(size=3, reflect)",18.140912,0.27063133,26.954,ok,,Optimized replacement for Python-loop median filter.
+set12,12,512,512,75,632023919,NLM_Skimage_Fast,"skimage.denoise_nl_means(fast_mode=True, h=0.8*sigma, sigma=known_sigma)",21.244908,0.43711376,677.358,ok,,Fast engineering baseline; not the original patchwise NLM runtime.
+set12,12,512,512,75,632023919,NLM_IPOL_Like,skimage.denoise_nl_means(fast_mode=False) with IPOL grayscale parameter schedule,21.462543,0.4581436,54226.618,ok,,Closer to IPOL patchwise parameters; can be very slow.
+set12,12,512,512,75,632023919,BM3D_TAU,"bm3d.bm3d(noisy_float01, sigma_psd=sigma/255)",23.809794,0.58863768,2103.477,ok,,Reference classical upper baseline for AWGN.
